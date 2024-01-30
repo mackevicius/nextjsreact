@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Car Catalogue website with Serverside and Clientside components.
+
+Tech Stack: Next.js, React, TypeScript, HeadlessUI, DaisyUI
+
+Deployed with vercel.
+
 Prod version: https://nextjscarcatalogue.vercel.app
 
 ## Getting Started
