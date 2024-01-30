@@ -25,7 +25,7 @@ export default function CustomFilter({ title, options }: CustomFilterProps) {
     setSelected(
       paramsValue ? { value: paramsValue, title: paramsValue } : options[0]
     );
-  }, []);
+  }, [title, options]);
 
   return (
     <div className="w-fit">
