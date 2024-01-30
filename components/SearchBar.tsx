@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { SearchManufacturer } from '.';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -22,6 +22,12 @@ export const SearchBar = () => {
   const [model, setModel] = useState('');
 
   const router = useRouter();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    setModel(searchParams.get('model') || '');
+    setManuFacturer(searchParams.get('manufacturer') || '');
+  }, []);
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

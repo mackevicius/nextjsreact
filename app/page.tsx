@@ -1,13 +1,7 @@
-import { Hero } from '@components';
-import { CustomFilter } from '@components';
-import { SearchBar } from '@components';
-import CarCard from '@components/CarCard';
-import { CarProps, FilterProps } from '@types';
 import { fetchCars } from '@utils';
-
-interface HomeProps {
-  searchParams: FilterProps;
-}
+import { HomeProps } from '@types';
+import { fuels, yearsOfProduction } from '@constants';
+import { CarCard, SearchBar, CustomFilter, Hero } from '@components';
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
@@ -19,9 +13,11 @@ export default async function Home({ searchParams }: HomeProps) {
   });
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+
   return (
     <main className="overflow-hidden">
       <Hero />
+
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-container">
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
@@ -32,15 +28,16 @@ export default async function Home({ searchParams }: HomeProps) {
           <SearchBar />
 
           <div className="home__filter-container">
-            <CustomFilter />
-            <CustomFilter />
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
+
         {!isDataEmpty ? (
           <section>
             <div className="home__cars-wrapper">
-              {allCars?.map((car, i) => (
-                <CarCard key={i} car={car} />
+              {allCars?.map((car) => (
+                <CarCard car={car} />
               ))}
             </div>
 

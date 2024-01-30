@@ -37,3 +37,17 @@ export interface CarProps {
   transmission: string;
   year: number;
 }
+
+export interface OptionProps {
+  title: string;
+  value: string;
+}
+
+export interface CustomFilterProps {
+  title: 'fuel' | 'year';
+  options: OptionProps[];
+}
+
+export interface HomeProps {
+  searchParams: FilterProps;
+}
