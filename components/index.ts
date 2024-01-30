@@ -6,6 +6,8 @@ import CustomFilter from './CustomFilter';
 import SearchManufacturer from './SearchManufacturer';
 import CarDetails from './CarDetails';
 import CarCard from './CarCard';
+import CustomButton from './CustomButton';
+import ShowMore from './ShowMore';
 
 export {
   Hero,
@@ -16,4 +18,6 @@ export {
   SearchManufacturer,
   CarDetails,
   CarCard,
+  CustomButton,
+  ShowMore,
 };
